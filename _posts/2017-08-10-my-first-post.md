@@ -4,6 +4,7 @@ title: 万物伊始
 description: "我的第一篇博客"
 modified: 2017-08-10
 share: false
+comments: true
 tags: [first post]
 image:
   feature: first-post.jpg
