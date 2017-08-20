@@ -22,8 +22,8 @@ image:
 所有的除了向服务端获取数据或者是验证用户权限等其他功能，都在前台完成，这样做的好处就是大大减轻服务器的压力，Gmail和Twitter等
 互联网公司也都大量使用了SPA。
 
-Angular作为AngularJS的升级版，无论从设计理念上，还是效率上都有很大的进步。其模块化的设计符合现代应用开发的趋势，在和后端进行交互上，也能合当今
-微服务框架有很好的配合，符合TDD（Test-Driven Development）的特点。
+Angular作为AngularJS的升级版，无论从设计理念上，还是效率上都有很大的进步。其模块化的设计符合现代应用开发的趋势，在和后端进行交互上，也能和当今
+微服务框架有很好的配合，同时也符合TDD（Test-Driven Development）的特点。
 
 Angular作为Google系前端框架，和Microsoft的TypeScript的强强联合，带着英雄所见略同的架势，自然吸引了全世界开发者的注意，Angular整个
 庞大的生态系统拔地而起：IDE，Tooling，UI components，Cross-Platform Development，以及各种活跃的社区...具体内容详见[Angular官方资源](https://angular.io/resources)。
