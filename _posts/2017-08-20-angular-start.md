@@ -30,7 +30,7 @@ Angular作为Google系前端框架，和Microsoft的TypeScript的强强联合，
 
 ### 内容
 Angular核心内容包括如下几个部分：
-* 模块(Module)
+* [模块(Module)](http://williamjing.com/2017/08/27/angular-module.html)
 * 组件(Component)
 * 模板(Template)
 * 指令(Directive)
