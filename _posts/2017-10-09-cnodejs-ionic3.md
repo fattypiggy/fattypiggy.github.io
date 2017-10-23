@@ -5,7 +5,7 @@ description: "基于Ionic3的Node.js中文社区客户端"
 modified: 2017-10-09
 share: true
 comments: true
-tags: [ionic3, angular]
+tags: [ionic3, Angular]
 image:
   feature: cnodejs.svg
 ---
