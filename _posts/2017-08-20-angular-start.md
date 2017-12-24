@@ -32,7 +32,7 @@ Angular作为Google系前端框架，和Microsoft的TypeScript的强强联合，
 Angular核心内容包括如下几个部分：
 * [模块(Module)](http://williamjing.com/2017/08/27/angular-module.html)
 * [组件(Component)](http://williamjing.com/2017/09/10/angular-component.html)
-* [声明周期(Lifecycle hooks)](http://williamjing.com/2017/12/24/angular-lifecycle-hooks.html)
+* [生命周期(Lifecycle hooks)](http://williamjing.com/2017/12/24/angular-lifecycle-hooks.html)
 * 模板(Template)
 * 指令(Directive)
 * 服务(Service)
