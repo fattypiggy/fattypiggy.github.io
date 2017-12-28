@@ -7,16 +7,16 @@ image:
   creditlink: https://unsplash.com/photos/vcPtHBqHnKk
 comments: true
 share: true
-modified: 2017-12-23
+modified: 2017-12-28
 ---
 
 # 经纬
 
-<i class="fa fa-home" aria-hidden="true"></i><http://williamjing.com>
+个人主页: <http://williamjing.com>
 
-<i class="fa fa-envelope-o" aria-hidden="true"></i><mailto:william_jing@qq.com>
+邮箱: <mailto:monkeykingisback@gmail.com>
 
-<i class="fa fa-github" aria-hidden="true"></i><https://github.com/fattypiggy>
+GitHub: <https://github.com/fattypiggy>
 
 ## 教育背景
 * 东华大学<br/>
@@ -30,7 +30,6 @@ modified: 2017-12-23
 * 熟练掌握ionic
 * 熟练常用CSS
 * 了解Node.js以及CORS, HTTP协议
-* 熟练使用VS Code
 
 ## 工作经验
 * PwC SDC - Intern<br/>
