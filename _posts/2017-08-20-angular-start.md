@@ -36,7 +36,7 @@ Angular核心内容包括如下几个部分：
 * 模板(Template)
 * 指令(Directive)
 * 服务(Service)
-* 依赖注入(Dependency Injection)
+* [依赖注入(Dependency Injection)](https://www.williamjing.com/2018/01/18/dependency-injection.html)
 * 数据绑定(Data Binding)
 
 我会围绕以上内容进行展开，大致包含少量的用法讲解，更多的是我对其的理解和一些注意事项。
