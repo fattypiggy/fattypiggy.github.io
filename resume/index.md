@@ -50,7 +50,7 @@ GitHub: <https://github.com/fattypiggy>
 *	PwC SDC 内部OA系统<br/>
 (09/2016-02/2017)
 *	澳门某赌场线上管理系统<br/>
-(08/2017-至今)
+(08/2017-01/2018)
 *	cnodejs.org社区第三方APP<br/>
 (09/2017-至今)
 
