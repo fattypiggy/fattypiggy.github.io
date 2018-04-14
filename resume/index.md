@@ -12,7 +12,7 @@ modified: 2017-12-28
 
 # 经纬
 
-个人主页: <http://williamjing.com>
+个人主页: <https://williamjing.com>
 
 邮箱: <mailto:monkeykingisback@gmail.com>
 
