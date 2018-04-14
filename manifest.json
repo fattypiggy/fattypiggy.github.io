@@ -1,0 +1,25 @@
+{
+  "short_name": "William's Blog",
+  "name": "William's Blog",
+  "icons": [
+    {
+      "src":"images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src":"images/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src":"images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "display": "standalone"
+}
