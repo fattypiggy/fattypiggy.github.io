@@ -34,7 +34,7 @@ Angular核心内容包括如下几个部分：
 * [组件(Component)](https://www.williamjing.com/2017/09/10/angular-component.html)
 * [生命周期(Lifecycle hooks)](https://www.williamjing.com/2017/12/24/angular-lifecycle-hooks.html)
 * 模板(Template)
-* 指令(Directive)
+* [指令(Directive)](https://www.williamjing.com/2018/05/07/angular-directive.html)
 * 服务(Service)
 * [依赖注入(Dependency Injection)](https://www.williamjing.com/2018/01/18/dependency-injection.html)
 * 数据绑定(Data Binding)
@@ -56,3 +56,6 @@ Angular核心内容包括如下几个部分：
 
 ### One More Thing
 此博客开通了Disqus评论功能，国内被屏蔽，如果想与我进行交流，请自行科学上网，或发邮件给我，我会尽快回复。
+
+### Update
+* On May 7th 2018 吐槽一波：Angular都已经V6了，我这系列还没更新完，哈哈哈...
