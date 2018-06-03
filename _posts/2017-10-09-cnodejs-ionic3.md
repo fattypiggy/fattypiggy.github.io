@@ -14,7 +14,7 @@ image:
 
 是因为我在“练功“--最近在弄一个开源项目:为[Nodejs中文社区](https://cnodejs.org/)做一个第三方App,GitHub Repo->[CNode-ionic](https://github.com/fattypiggy/CNode-ionic),希望有志同道合的小伙伴多多提建议。
 
-### 目前实现的功能有：(截止2017年10月9日)
+# 目前实现的功能有：(截止2017年10月9日)
 
 * 话题展示
 * 话题详情
@@ -22,7 +22,7 @@ image:
 * Loading More
 * 3D Touch
 
-### 正在进行
+## 正在进行
 
 * 扫码登陆
 * 个人信息展示
@@ -30,6 +30,6 @@ image:
 * 本地缓存
 * 重构垃圾代码！
 
+## Update
 
-### Update
 * 回头去看看自己半年前写的代码，啧啧啧，哎，不说了，看来是我进步了...

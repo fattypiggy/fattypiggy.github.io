@@ -16,8 +16,10 @@ image:
 
 虽然时间很紧，但我还是更倾向于高质量的总结和分享，年轻时要克服浮躁和焦虑，脚踏实地，稳步前进！
 
-### 概述
+# 概述
+
 Angular中的Directive分为三类:
+
 * 组件(Component): 带有模板的指令
 * 属性指令(Attribute Directives): 添加、删除DOM元素改变DOM结构
 * 结构指令(Structural directives): 改变元素、组件、其他指令外观和行为
@@ -29,8 +31,10 @@ Angular中的Directive分为三类:
 
 常用的结构指令有内置的 **NgFor** 和 **NgIf** 用来改变视图的结构。
 
-### 创建指令
+## 创建指令
+
 创建一个指令最基本的操作:
+
 1. 导入Directive装饰器(结构化指令还需要Input、TemplateRef和ViewContainerRef)
 2. 设置CSS选择器，Angular会在文本中定位此选择器
 3. 给指令类添加装饰器
@@ -59,26 +63,26 @@ Angular中的Directive分为三类:
 
 ```typescript
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
- 
+
 @Directive({
   selector: '[appHighlight]'
 })
 export class HighlightDirective {
- 
+
   constructor(private el: ElementRef) { }
- 
+
   @Input() defaultColor: string;
- 
+
   @Input('appHighlight') highlightColor: string;
- 
+
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.highlightColor || this.defaultColor || 'red');
   }
- 
+
   @HostListener('mouseleave') onMouseLeave() {
     this.highlight(null);
   }
- 
+
   private highlight(color: string) {
     this.el.nativeElement.style.backgroundColor = color;
   }
@@ -127,10 +131,11 @@ export class UnlessDirective {
 }
 ```
 
-### 注意事项
+## 注意事项
+
 1. 这里的方括号([])表示它的属性型选择器。Angular 会在模板中定位每个有一个属性叫 appHighlight 的元素，并且为这些元素加上本指令的逻辑。
 2. 一个宿主元素最多只能绑定一个结构指令，但是可以有多个属性指令
-3. 结构指令前面的星号(*)是语法糖，其实是Angular帮我们把宿主元素嵌入到<ng-template>中,所以结构指令一般都有两种写法，官方推荐带星号的语法糖形式
+3. 结构指令前面的星号(*)是语法糖，其实是Angular帮我们把宿主元素嵌入到‘ng-template’中,所以结构指令一般都有两种写法，官方推荐带星号的语法糖形式
 4. 对于带有输入属性的指令，在模板中是否加([])的这个问题，例如：
 
 ```html
@@ -139,6 +144,7 @@ export class UnlessDirective {
 ```
 
 []是一个绑定到 @**Input** 的语法，等号(=)后面的内容是变量名，这不是Directive特有的，而是整个Angular的语法，详见[Angular模板语法](https://angular.cn/guide/template-syntax)。
+
 * 有方括号([])时：等号右侧引号内的变量必须在ts文件中存在，否则绑定失败，或者双引号内的变量是一个string，并且用单引号引起来
 * 没有方括号([])时：自定义的Directive或者Input属性将按照HTML规定的属性绑定去解析，双引号内的变量将会是string
 * 特殊情况：Boolean类型的true和false，是否写方括号，它的值都将会被正确解析。

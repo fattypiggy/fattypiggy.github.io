@@ -16,7 +16,8 @@ image:
 一是为了记录自己学习心得，
 二是在工作闲暇之余，有东西和大家进行交流探讨，互相提高。
 
-### 背景
+# 背景
+
 谈到[Angular](https://angular.io/)，不得不先提及一下[SPA(Single Page Application)](https://en.wikipedia.org/wiki/Single-page_application)。SPA和一般的Web应用有一个只看名字就能知道的重要的区别，
 那就是SPA只有一个"页面"。敲黑板！！！这里的一个页面指的是只从服务端拿一次HTML页面，同时服务端也会返回一个作为"控制器"的js文件，
 所有的除了向服务端获取数据或者是验证用户权限等其他功能，都在前台完成，这样做的好处就是大大减轻服务器的压力，Gmail和Twitter等
@@ -28,8 +29,10 @@ Angular作为AngularJS的升级版，无论从设计理念上，还是效率上�
 Angular作为Google系前端框架，和Microsoft的TypeScript的强强联合，带着英雄所见略同的架势，自然吸引了全世界开发者的注意，Angular整个
 庞大的生态系统拔地而起：IDE，Tooling，UI components，Cross-Platform Development，以及各种活跃的社区...具体内容详见[Angular官方资源](https://angular.io/resources)。
 
-### 内容
+## 内容
+
 Angular核心内容包括如下几个部分：
+
 * [模块(Module)](https://www.williamjing.com/2017/08/27/angular-module.html)
 * [组件(Component)](https://www.williamjing.com/2017/09/10/angular-component.html)
 * [生命周期(Lifecycle hooks)](https://www.williamjing.com/2017/12/24/angular-lifecycle-hooks.html)
@@ -42,10 +45,12 @@ Angular核心内容包括如下几个部分：
 我会围绕以上内容进行展开，大致包含少量的用法讲解，更多的是我对其的理解和一些注意事项。
 因为本人水平有限，如遇到和[官方文档](https://angular.io/docs)有偏差，还以官方为准。
 
-### 准备
+## 准备
+
 在分享Angular之前，我们需要了解基本的前端知识包含HTML、CSS，掌握或是精通[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)，了解[TypeScript](https://www.typescriptlang.org/docs/home.html)语法以及面向HTTP服务的[RxJS](http://reactivex.io/rxjs/)和响应式编程。
 
-### 环境
+## 环境
+
 为了更好地配合日后内容中的代码的兼容性，我列举如下环境供大家参考：
 
 * MacOS (10.12.6)
@@ -54,8 +59,10 @@ Angular核心内容包括如下几个部分：
 * Angular (4.3.5)
 * @angular-cli (1.3.1)
 
-### One More Thing
+## One More Thing
+
 此博客开通了Disqus评论功能，国内被屏蔽，如果想与我进行交流，请自行科学上网，或发邮件给我，我会尽快回复。
 
-### Update
+## Update
+
 * On May 7th 2018 吐槽一波：Angular都已经V6了，我这系列还没更新完，哈哈哈...
