@@ -2,14 +2,9 @@
 layout: post
 title: 万丈高楼平地起
 description: "万丈高楼平地起"
-modified: 2017-10-23
-share: true
-comments: true
+date: 2017-10-23
 tags: [前端, 随笔]
-image:
-  feature: galaxy.jpg
-  credit: Pexels
-  creditlink: https://static.pexels.com/photos/2150/sky-space-dark-galaxy.jpg
+cover: images/galaxy.jpg
 ---
 
 趁今日闲暇时刻，来给当前的自己“存个档”。

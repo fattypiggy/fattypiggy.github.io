@@ -2,14 +2,9 @@
 layout: post
 title: Angular
 description: "关于Angular的个人拙见"
-modified: 2017-08-20
-share: true
-comments: true
+date: 2017-08-20
 tags: [Angular]
-image:
-  feature: angular-3.svg
-  credit: worldvectorlogo.com
-  creditlink: https://worldvectorlogo.com/logo/angular-3
+cover: images/angular-3.svg
 ---
 
 作为一个"实干家"，我决定在接下来的一段时间开一个关于Angular的专题，

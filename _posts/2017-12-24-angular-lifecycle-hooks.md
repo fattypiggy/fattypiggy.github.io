@@ -2,14 +2,9 @@
 layout: post
 title: Angular生命周期钩子
 description: "Angular生命周期钩子"
-modified: 2017-12-24
-share: true
-comments: true
+date: 2017-12-24
 tags: [Angular]
-image:
-  feature: angular-3.svg
-  credit: worldvectorlogo.com
-  creditlink: https://worldvectorlogo.com/logo/angular-3
+cover: images/angular-3.svg
 ---
 
 🎅🎅🎅提前祝Merry Xmas🎅🎅🎅

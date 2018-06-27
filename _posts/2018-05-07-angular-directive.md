@@ -2,14 +2,9 @@
 layout: post
 title: Angular核心概念之指令(Directive)
 description: "Angular核心概念之指令(Directive)"
-modified: 2018-05-07
-share: true
-comments: true
+date: 2018-05-07
 tags: [Angular]
-image:
-  feature: angular-3.svg
-  credit: worldvectorlogo.com
-  creditlink: https://worldvectorlogo.com/logo/angular-3
+cover: images/angular-3.svg
 ---
 
 因为最近事情比较多，平时上班处于饱和状态，晚上回家也已经很累了，加上周末要去运动放松，实在难找出一整块时间去整理学习(ㄒoㄒ)。有过原创博客经历的人都知道，去高质量的总结、分享一些知识点其实非常的费时间，就比如去年分享的[组件](https://www.williamjing.com/2017/09/10/angular-component.html)那篇，足足耗费了我一个下午，可是我还是觉得有很多细节没有表述清楚，加上我文笔一般，经常是想写的很多，但是打开编辑器就忘了思路...

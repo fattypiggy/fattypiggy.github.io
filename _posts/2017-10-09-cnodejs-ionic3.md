@@ -2,12 +2,9 @@
 layout: post
 title: 基于Ionic3的Node.js中文社区客户端
 description: "基于Ionic3的Node.js中文社区客户端"
-modified: 2017-10-09
-share: true
-comments: true
+date: 2017-10-09
 tags: [ionic3, Angular]
-image:
-  feature: cnodejs.svg
+cover: images/cnodejs.svg
 ---
 
 是不是好久没更新博客了？

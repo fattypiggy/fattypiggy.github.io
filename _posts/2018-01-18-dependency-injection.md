@@ -2,14 +2,9 @@
 layout: post
 title: Angular依赖注入-Dependency Injection
 description: "Angular依赖注入-Dependency Injection"
-modified: 2018-01-18
-share: true
-comments: true
+date: 2018-01-18
 tags: [Angular]
-image:
-  feature: angular-3.svg
-  credit: worldvectorlogo.com
-  creditlink: https://worldvectorlogo.com/logo/angular-3
+cover: images/angular-3.svg
 ---
 
 2018年继续来搞Angular！
