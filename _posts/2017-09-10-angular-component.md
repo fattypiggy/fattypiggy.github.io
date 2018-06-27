@@ -4,7 +4,7 @@ title: Angular核心概念之组件(Component)
 description: "Angular核心概念之组件(Component)"
 date: 2017-09-10
 tags: [Angular]
-cover: images/angular-3.svg
+cover: angular-3.svg
 ---
 
 > 师者，所以传道受业解惑也。
