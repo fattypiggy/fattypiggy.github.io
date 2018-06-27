@@ -2,14 +2,9 @@
 layout: post
 title: 万物伊始
 description: "我的第一篇博客"
-modified: 2017-08-10
-share: true
-comments: true
+date: 2017-08-10
 tags: [first post]
-image:
-  feature: first-post.jpg
-  credit: Pexels
-  creditlink: https://www.pexels.com/photo/grayscale-photo-of-computer-laptop-near-white-notebook-and-ceramic-mug-on-table-169573/
+cover: images/first-post.jpg
 ---
 
 今天是北京时间2017年8月10日，我决定在个人主页上发布第一篇博客。
