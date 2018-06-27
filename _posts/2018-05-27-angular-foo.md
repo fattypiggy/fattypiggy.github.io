@@ -2,14 +2,9 @@
 layout: post
 title: Angular随笔
 description: Angular随笔
-modified: 2018-05-27
-share: true
-comments: true
+date: 2018-05-27
 tags: [Angular]
-image:
-  feature: angular-3.svg
-  credit: worldvectorlogo.com
-  creditlink: https://worldvectorlogo.com/logo/angular-3
+cover: images/angular-3.svg
 ---
 
 最近，我在开发一个前端交互较为复杂的项目，其中好几个组件的ts文件已经超过1000行！仅仅处理其中的逻辑就已经很让我头大，更不要说去维护多人协作的老代码，再加上需求的变化，项目时间还很紧，种种因素，导致了代码的质量很低。所以，我想总结一下自己在开发过程中遇到的“坑”，分享一下自己的想法，也想探讨一下更好地解决方案。

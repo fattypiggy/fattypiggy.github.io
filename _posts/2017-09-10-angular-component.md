@@ -2,14 +2,9 @@
 layout: post
 title: Angular核心概念之组件(Component)
 description: "Angular核心概念之组件(Component)"
-modified: 2017-09-10
-share: true
-comments: true
+date: 2017-09-10
 tags: [Angular]
-image:
-  feature: angular-3.svg
-  credit: worldvectorlogo.com
-  creditlink: https://worldvectorlogo.com/logo/angular-3
+cover: images/angular-3.svg
 ---
 
 > 师者，所以传道受业解惑也。
