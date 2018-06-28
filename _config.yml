@@ -49,12 +49,16 @@ postPatterns: 'food'
 # SNS settings 配置社交网站
 # url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
 sns:
-  # email: monkeykingisback@gmail.com
+  email: monkeykingisback@gmail.com
   github: '//github.com/fattypiggy'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
 recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
+
+# friend links
+friends:
+  "Isaac's Blog": '//isaacguan.github.io/'
 
 # Build settings
 paginate: 6

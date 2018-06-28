@@ -63,24 +63,41 @@ home-title: William's Blog
                 </div>
                 {% if site.sns.size > 0 %}
                 <ul id="sns-links" class="sns-links">
-                    {% for s in site.sns %}
+                    {% if site.sns.email %}
                     <li>
-                        <a href="{{ s[1] }}" target="_blank">
-                            <i class="iconfont icon-{{ s[0] }}"></i>
+                        <a href="mailto:{{ site.sns.email }}">
+                            <i class="iconfont icon-email"></i>
                         </a>
                     </li>
-                    {% endfor %}
+                    {% endif %}
+                    {% if site.sns.github %}
+                    <li>
+                        <a href="{{ site.sns.github }}">
+                            <i class="iconfont icon-github"></i>
+                        </a>
+                    </li>
+                    {% endif %}
                 </ul>
                 {% endif %}
             </section>
 
             {% if site.recommend-tags and site.tags.size>0 %}
             <section class="tags-card">
+                <span class="custom-label">Tags</span>
                 {% for tag in site.tags %}
                     {% if forloop.index > site.recommend-condition-size %}
                         {% break %}
                     {% endif %}
                     <a href="{{ "tags.html#" | append: tag[0] | prepend: site.baseurl }}" class="tag">{{ tag[0]}}</a>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            {% if site.friends and site.friends.size>0 %}
+            <section class="tags-card">
+                <span class="custom-label">Friends</span>
+                {% for friend in site.friends %}
+                    <a href="{{ friend[1] }}" class="tag">{{ friend[0]}}</a>
                 {% endfor %}
             </section>
             {% endif %}
@@ -99,3 +116,13 @@ home-title: William's Blog
 </main>
 
 {% include footer.html %}
+<!-- custom style -->
+<style>
+    span.custom-label {
+        display: block;
+        margin-top: -20px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #a6abb2;
+    }
+</style>
