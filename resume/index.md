@@ -1,13 +1,8 @@
 ---
-layout: page
+layout: post
 title: Resume
-image:
-  feature: resume.jpg
-  credit: freestocks.org 
-  creditlink: https://unsplash.com/photos/vcPtHBqHnKk
-comments: true
-share: true
-modified: 2017-12-28
+cover: resume.jpg
+date: 2017-12-28
 ---
 
 # 经纬

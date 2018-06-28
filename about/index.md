@@ -1,13 +1,8 @@
 ---
-layout: page
+layout: post
 title: About me
-image:
-  feature: about.jpg
-  credit: Pietro De Grandi
-  creditlink: https://unsplash.com/photos/KF3GJ3DYhY8
-comments: true
-share: true
-modified: 2017-12-22
+cover: about.jpg
+date: 2017-12-22
 ---
 
 ## Hello World

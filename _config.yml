@@ -13,6 +13,8 @@ imageFolder: images
 nav:
   home: '/'
   tags: '/tags.html'
+  resume: '/resume'
+  about: '/about'
 
 # Owner/author information
 author: William Jing
