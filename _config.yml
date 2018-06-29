@@ -1,11 +1,11 @@
 title:            William's Blog
 description:      The Wolrd of William Jing
-keyword: William Jing, 经纬, 前端, 前端开发, Angular, 个人分享, 记录生活
+keyword: William Jing, 经纬, TypeScript, JavaScript, 前端, 前端开发, Angular, 个人分享, 记录生活
 
 # Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-url: https://www.williamjing.com
-
+# url: https://www.williamjing.com
+url: http://localhost:4000
 # Images folder
 imageFolder: images
 
@@ -13,8 +13,8 @@ imageFolder: images
 nav:
   home: '/'
   tags: '/tags.html'
-  resume: '/resume'
-  about: '/about'
+  resume: '/resume/index.html'
+  about: '/about/index.html'
 
 # Owner/author information
 author: William Jing
@@ -40,7 +40,7 @@ mathjax: true
 
 # Share
 social-share: true
-social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
+social-share-items: ['weibo', 'douban', 'twitter']
 
 # theme color 主题皮肤
 theme-color: 'default'  # pink or default
@@ -53,6 +53,7 @@ postPatterns: 'food'
 sns:
   email: monkeykingisback@gmail.com
   github: '//github.com/fattypiggy'
+  juejin: '//juejin.im/user/5a1cc2e6f265da432b4a8d7a'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
