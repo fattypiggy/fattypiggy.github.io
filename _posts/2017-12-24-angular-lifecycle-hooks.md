@@ -4,7 +4,7 @@ title: Angular生命周期钩子
 description: "Angular生命周期钩子"
 date: 2017-12-24
 tags: [Angular]
-cover: angular-3.svg
+# cover: angular-3.svg
 ---
 
 🎅🎅🎅提前祝Merry Xmas🎅🎅🎅

@@ -4,7 +4,7 @@ title: Angular核心概念之模块(Module)
 description: "Angular核心概念之模块(Module)"
 date: 2017-08-27
 tags: [Angular]
-cover: angular-3.svg
+# cover: angular-3.svg
 ---
 
 今天我们开始更新Angular核心系列专题，这仅是我个人学习Angular以来进行的一些总结和个人经验分享，并不是一个适合初学者的教程，

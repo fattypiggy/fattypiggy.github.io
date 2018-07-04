@@ -3,8 +3,8 @@ layout: post
 title: 万物伊始
 description: "我的第一篇博客"
 date: 2017-08-10
-tags: [first post]
-cover: first-post.jpg
+# tags: [first post]
+# cover: first-post.jpg
 ---
 
 今天是北京时间2017年8月10日，我决定在个人主页上发布第一篇博客。

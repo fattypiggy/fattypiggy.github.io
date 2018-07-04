@@ -4,7 +4,7 @@ title: Angular依赖注入-Dependency Injection
 description: "Angular依赖注入-Dependency Injection"
 date: 2018-01-18
 tags: [Angular]
-cover: angular-3.svg
+# cover: angular-3.svg
 ---
 
 2018年继续来搞Angular！

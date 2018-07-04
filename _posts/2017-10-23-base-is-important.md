@@ -3,8 +3,8 @@ layout: post
 title: 万丈高楼平地起
 description: "万丈高楼平地起"
 date: 2017-10-23
-tags: [前端, 随笔]
-cover: galaxy.jpg
+tags: [前端]
+# cover: galaxy.jpg
 ---
 
 趁今日闲暇时刻，来给当前的自己“存个档”。

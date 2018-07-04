@@ -4,7 +4,7 @@ title: 译-JS定时器工作原理
 description: 译-JS定时器工作原理
 date: 2018-06-03
 tags: [翻译, JavaScript]
-cover: notebook.jpg
+# cover: notebook.jpg
 ---
 
 本篇是John Resig的[JS定时器工作原理](https://johnresig.com/blog/how-javascript-timers-work/)的翻译版本，由于本人水平有限，仅供个人学习与参考，如有用词不准确，请以原文为准。

@@ -4,7 +4,7 @@ title: Angular
 description: "关于Angular的个人拙见"
 date: 2017-08-20
 tags: [Angular]
-cover: angular-3.svg
+# cover: angular-3.svg
 ---
 
 作为一个"实干家"，我决定在接下来的一段时间开一个关于Angular的专题，

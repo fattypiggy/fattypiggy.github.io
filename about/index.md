@@ -1,11 +1,11 @@
 ---
 layout: post
 title: About me
-cover: about.jpg
+# cover: about.jpg
 date: 2017-12-22
 ---
 
-## Hello World
+# Hello World
 
 大家好，我是经纬，英文名字William。
 
