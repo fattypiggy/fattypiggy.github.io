@@ -24,7 +24,7 @@ bio: 心之所向，身之所往。
 search: true
 
 # Night mode
-nightMode: true
+nightMode: false
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   UA-104408878-2
