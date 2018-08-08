@@ -57,4 +57,48 @@ private makeSubscription() {
 }
 ```
 
-## 未完待续...
+## 场景
+
+### 如何将Blob画在canvas上
+
+假设我们从后端获取了图片的Blob数据，但是怎么画到canvas上呢？
+
+1. 初始化一个Image对象
+
+2. 设置 *image* 的 *src* 属性，这里的url很有意思，是使用URL的一个静态方法来创建一个url指向这个对象，这个方法我也是第一次了解和使用
+
+3. 使用私有draw()方法在canvas上画图
+
+```javascript
+ngOnInit() {
+    this.context = this.myCanvas.nativeElement.getContext('2d');
+    this.makeSubscription();
+
+    const image = new Image();
+    const url = URL.createObjectURL(image);
+    image.src = url;
+    this.draw(image, 0, 0);
+  }
+
+  private draw(image: HTMLImageElement, dX: number, dY: number) {
+    // TODO
+    this.context.drawImage(image, dX, dY);
+    console.log('draw method');
+  }
+```
+
+等等，上面一顿操作，你会发现，图呢？没画上去啊！
+其实，要想真正当一个好的前端程序员，要时刻记得 **异步**。原因是：image虽然创建了实例，但是还没有load，
+所以要在load之后再调用draw()方法。更改代码如下：
+
+```javascript
+fromEvent(image, 'load').subscribe(() => {
+    this.draw(image, 0, 0);
+});
+```
+
+这里又涉及RxJS的一些知识，我将在接下来一段时间归纳总结一下RxJS。
+
+## 未完待续
+
+每天学习一点
