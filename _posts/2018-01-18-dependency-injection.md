@@ -54,7 +54,7 @@ Provider这种设计模式由来已久，在前后台各种技术领域中被广
 
 对于调用者来说，业务代码和接口没有改变，从而带来极大的便利
 
-```typescript
+```javascript
 {provider: Render, useClass: DomRender} //DOM渲染方式
 //{provider: Render, useClass: CanvasRender} //Canvas渲染方式
 //{provider: Render, useClass: ServerRender} //服务端渲染方式
@@ -64,7 +64,7 @@ Provider这种设计模式由来已久，在前后台各种技术领域中被广
 
 实际项目中，以来的对象不一定是类
 
-```typescript
+```javascript
 {provider: 'name', useValue: 'William Jing'}
 ```
 
@@ -72,7 +72,7 @@ Provider这种设计模式由来已久，在前后台各种技术领域中被广
 
 实现多个依赖，一个对象实例的所用，例如为了让新旧服务同时可用，新服务兼容老服务，可以使用此种注册方式
 
-```typescript
+```javascript
 {provider: NewService, useClass: NewService}
 {provider: OldService, useExisting: NewService}
 ```
@@ -81,13 +81,13 @@ Provider这种设计模式由来已久，在前后台各种技术领域中被广
 
 有时候依赖对象是动态变化的，可能需要环境、执行权限来生成，工厂Provider可以提供解决这个问题，通过暴露一个工厂方法，返回一个最终的依赖对象
 
-```typescript
+```javascript
 let contactServiceFactory = (_logger: LoggerService, _userService: UserService) =>{
   return new contactService(_logger, _userService.user.isAuthorized)
 }
 ```
 
-```typescript
+```javascript
 export let contactServiceProvider = {
   provider: ContactService,
   userFactory: contactServiceFactory,

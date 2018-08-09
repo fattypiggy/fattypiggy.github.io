@@ -45,13 +45,13 @@ Angular用@Component来定义一个类作为Angular的组件。
 * 显示数据：使用插值语法(双大括号)来显示组件的数据
 * 双向数据绑定：便控制用户输入
 
-```typescript
+```javascript
 [{ngModel}]=“property”
 ```
 
 * 监听宿主元素时间以及调用组件方法：监听click事件，触发组件类中特定函数
 
-```typescript
+```javascript
 <i (click)="someFun()"></i>
 ```
 

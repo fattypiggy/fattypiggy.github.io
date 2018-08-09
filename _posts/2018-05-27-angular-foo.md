@@ -15,13 +15,13 @@ tags: [Angular]
 
 我现在的解决办法是：声明一个Service，父子组件共用，然后在Service里保存一个Subject，父组件里属性发生变化，触发
 
-```typescript
+```javascript
 subject.next(item)
 ```
 
 然后，在子组件里订阅
 
-```typescript
+```javascript
 subject.subscribe(item => {
   doSomething()
 })
