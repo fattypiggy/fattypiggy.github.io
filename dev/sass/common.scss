@@ -548,6 +548,7 @@
     .highlight {
         margin: 0 0 16px;
         overflow: scroll;
+        -webkit-overflow-scrolling: touch;
     }
     img {
         transition: .3s;
