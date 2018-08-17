@@ -1,4 +1,4 @@
-title:            William's Blog
+title:            William's Blog - 前端, TypeScript, Angular
 description:      The Wolrd of William Jing
 keyword: William Jing, 经纬, TypeScript, JavaScript, 前端, 前端开发, Angular, 个人分享, 记录生活
 
@@ -61,6 +61,7 @@ recommend-condition-size: 12 # a tag will be recommended if the size of it is mo
 # friend links
 friends:
   "Isaac's Blog": '//isaacguan.github.io/'
+  "Postbird": '//www.ptbird.cn/'
 
 # Build settings
 paginate: 6
