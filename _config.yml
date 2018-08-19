@@ -61,7 +61,7 @@ recommend-condition-size: 12 # a tag will be recommended if the size of it is mo
 # friend links
 friends:
   "Isaac's Blog": '//isaacguan.github.io/'
-  "Postbird": '//www.ptbird.cn/'
+  "Postbird": 'http://www.ptbird.cn/'
   "Kuang Jun": '//crisjk.site/'
 
 # Build settings
