@@ -29,6 +29,17 @@ subject.subscribe(item => {
 
 由于[Subject](http://reactivex.io/documentation/subject.html)在RxJS里扮演着一个重要的角色，即既是观察者(observer)，又是可观察对象(Observable)。
 
-Angular官方推荐使用Observable代替Promise进行异步操作，就像是TS是JS的超集，Observable也可以很简单的转换成Promise，而且Angular本身也使用观察者设计模式，
+Angular官方推荐使用Observable代替Promise进行异步操作，就像是TS是JS的超集，Observable也可以很简单的转换成Promise，而且Angular本身也使用观察者设计模式。
 
 Observable的具体使用方法和一些技术细节未完待续...
+
+## 边用边学Angular
+
+* Angular路由
+
+以前一直不十分清楚 `path: "**"`，原来是通配符，在所有路由都不满足的情况下，才会使用次路由配置，建议放在路由配置表的最下面。另外，路由配置不建议以`/`开头，因为斜线开头是绝对路径，尤其在有子路由`children:[]`配置时，会导致路由结果错误，建议使用相对路径路由。
+
+
+子路由还会继承父级组件里的`params`(如果被废弃请使用`paramMap`)和`data`。
+
+路由匹配规则默认`prefix`，也可以设置`full`。
