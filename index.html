@@ -1,6 +1,7 @@
 ---
 layout: default
 home-title: William's Blog
+header-img: bg.jpg
 ---
 
 {% include header.html %}
@@ -8,7 +9,7 @@ home-title: William's Blog
 <div class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}" data-theme="{{ site.theme-color }}">
     <h2>{{ page.home-title }}</h2>
     {% if page.header-img %}
-    <img class="header-img" src="{{ page.header-img | prepend: site.baseurl }}" alt="">
+    <img class="header-img" src="{{ site.url }}/{{ site.imageFolder }}/{{ page.header-img }}" alt="">
     {% endif %}
 </div>
 
