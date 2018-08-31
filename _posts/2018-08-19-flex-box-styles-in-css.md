@@ -4,6 +4,7 @@ title: Flex box styles in CSS
 description: This article is a simple guide of flex box, and the advantages of flex box, how we use that, and some code and demos.
 date: 2018-08-19
 tags: [CSS, Flex box]
+cover: article.jpg
 ---
 
 可能是自己对Flex box的全部理解了。
