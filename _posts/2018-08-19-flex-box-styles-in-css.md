@@ -54,7 +54,7 @@ tags: [CSS, Flex box]
 }
 ```
 
-* [**flex-flow**](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow): **flex-direction** 和 **flex-wrap** 的简写形式
+* [**flex-flow**](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow): `flex-direction` 和 `flex-wrap` 的简写形式
 
 ```CSS
 .container {
@@ -94,6 +94,82 @@ tags: [CSS, Flex box]
 ```
 
 注意： 仅当存在多轴线时有效！也就是说 **flex-wrap**为nowrap的时候，不会产生多线，这个效果也就没用。
+
+### Flex项属性
+
+* [**align-self**](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self): 设置单个项和其他项不同排列方式
+
+```CSS
+.item {
+    align-self: stretch | flex-start | flex-end | center;
+}
+```
+
+会覆盖`align-items`属性。
+
+* [**order**](https://developer.mozilla.org/en-US/docs/Web/CSS/order): 在同一容器内重新排列元素顺序，值为整数
+
+```CSS
+.item {
+    order: <integer>
+}
+```
+
+* [**flex-grow**](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow): 项的放大比例
+
+```CSS
+.item {
+    flex-grow: <integer>
+}
+```
+
+当所有项初始化之后，还有剩余空间时，`flex-grow`才会生效；
+
+默认值为0，即即使存在剩余空间，也不会放大；
+
+如果存在剩余空间，容器内所有设置`flex-grow`的项根据权重进行分配剩余空间；
+
+如果所有项以`flex-basis`排列后，主轴空间不足，并且`flex-wrap: nowrap`时，需要配合`flex-shrink`使用。
+
+* [**flex-shrink**](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink): 项的缩小比例
+
+```CSS
+.item{
+    flex-shrink: <positive-number>
+}
+```
+
+缩小方式和放大方式类似。
+
+那么问题来了： 缩小后的值是多少？计算方式是什么？
+
+[Stack Overflow链接](https://stackoverflow.com/questions/36550840/how-to-calculate-flex-shrink-when-flex-items-have-a-different-flex-basis)，能否看懂就看各位的造化了...
+
+* [**flex-basis**](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis): 项初始主轴大小(main size)
+
+```CSS
+.item {
+    flex-basis: auto | <width>
+}
+```
+
+当`flex-basis`设置了值之后，项的`width` or `height`(取决于主轴方向，主轴方向的值)会失效；
+
+当设置为`auto`时，项的`width` or `height`才会生效。
+
+* [**flex**](https://developer.mozilla.org/en-US/docs/Web/CSS/flex): `flex-grow`、`flex-shrink`和`flex-basis`的简写
+
+```CSS
+.item {
+    flex: auto | none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+}
+```
+
+两个快捷值： `auto(1 1 auto)`和`none(0 0 auto)`;
+
+`flex-grow`和`flex-shrink`不会同时起作用；
+
+flex项如果`flex-grow`、`flex-shrink`都设置了，无论`flex-wrap`是`wrap`还是`nowrap`，所有的项就会撑满容器，也就是说，只要有剩余空间，`flex-grow`就会起作用，只要空间不足，`flex-shrink`就会起作用。
 
 ## Reference
 
