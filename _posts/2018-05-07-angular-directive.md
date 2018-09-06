@@ -16,8 +16,8 @@ tags: [Angular]
 Angular中的Directive分为三类:
 
 * 组件(Component): 带有模板的指令
-* 属性指令(Attribute Directives): 添加、删除DOM元素改变DOM结构
-* 结构指令(Structural directives): 改变元素、组件、其他指令外观和行为
+* 属性指令(Attribute Directives): 改变元素、组件、其他指令外观和行为
+* 结构指令(Structural directives): 添加、删除DOM元素改变DOM结构
 
 组件是一种特殊的指令，详见[组件](https://www.williamjing.com/2017/09/10/angular-component.html)。
 本篇我们重点介绍另外两种指令。
