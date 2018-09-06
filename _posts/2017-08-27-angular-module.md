@@ -12,7 +12,7 @@ tags: [Angular]
 
 # 初识Module
 
-Angular的Module作用是把**Component**、**Pipe**、**irective**打包成内聚的功能块，封装和暴露相应的功能，从而达到模块间的解耦，高度自治的一种程序设计模式。
+Angular的Module作用是把 **Component**、**Pipe**、**Directive**打包成内聚的功能块，封装和暴露相应的功能，从而达到模块间的解耦，高度自治的一种程序设计模式。
 换句话说，Module对应的是业务和功能，Component对应的才是页面展示和交互。
 
 我们使用[@NgModule](https://angular.cn/api/core/NgModule)来标记一个类，使之成为Angular模块类。下面是里面的常用元数据的功能和注意事项：
