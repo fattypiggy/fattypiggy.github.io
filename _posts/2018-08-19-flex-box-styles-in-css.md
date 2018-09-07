@@ -152,7 +152,7 @@ cover: article.jpg
 
 算法👇
 
-```javascript
+```JavaScript
 let sumScaledShrinkFactors = 0,
     remainingFreeSpace = flexContainer.innerMainSize;
 for (let item of flexItems) {
@@ -168,13 +168,13 @@ for (let item of flexItems) {
 
 公式👇
 
-```javascript
+```JavaScript
 flexBasis * (1 + shrinkFactor / sumScaledShrinkFactors * remainingFreeSpace)
 ```
 
 例子👇
 
-```
+```JavaScript
 1*600px + 1*200px ─┐               width 
                    │              ───────
 600px * (1 + 1 / 800px * -200px) = 450px 

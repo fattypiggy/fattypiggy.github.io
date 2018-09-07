@@ -56,7 +56,7 @@ Angular中的Directive分为三类:
 </p>
 ```
 
-```javascript
+```JavaScript
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
@@ -86,7 +86,7 @@ export class HighlightDirective {
 
 * 结构指令
 
-```javascript
+```JavaScript
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 /**

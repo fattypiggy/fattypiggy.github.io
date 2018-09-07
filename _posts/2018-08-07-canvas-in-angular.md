@@ -28,7 +28,7 @@ tags: [canvas]
 要想使用canvas进行画图，先要创建一个上下文 *context*，然后使用draw()进行画图
 使用RxJS监听窗口大小变化，然后再动态更改canvas的大小。
 
-```javascript
+```JavaScript
 @ViewChild('myDiv') myDiv: ElementRef<HTMLDivElement>;
 @ViewChild('myCanvas') myCanvas: ElementRef<HTMLCanvasElement>;
 context: CanvasRenderingContext2D;
@@ -69,7 +69,7 @@ private makeSubscription() {
 
 3. 使用私有draw()方法在canvas上画图
 
-```javascript
+```JavaScript
 ngOnInit() {
     this.context = this.myCanvas.nativeElement.getContext('2d');
     this.makeSubscription();
@@ -91,7 +91,7 @@ ngOnInit() {
 其实，要想真正当一个好的前端程序员，要时刻记得 **异步**。原因是：image虽然创建了实例，但是还没有load，
 所以要在load之后再调用draw()方法。更改代码如下：
 
-```javascript
+```JavaScript
 fromEvent(image, 'load').subscribe(() => {
     this.draw(image, 0, 0);
 });

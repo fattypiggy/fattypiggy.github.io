@@ -39,7 +39,7 @@ tags: [翻译, JavaScript]
 
 我们用一个例子来更好地展示setTimeout和setInterval的不同。
 
-```javascript
+```JavaScript
 setTimeout(function(){
   /* Some long block of code... */
   setTimeout(arguments.callee, 10);
