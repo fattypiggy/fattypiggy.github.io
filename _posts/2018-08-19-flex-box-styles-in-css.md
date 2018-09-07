@@ -11,7 +11,7 @@ cover: article.jpg
 
 # Background
 
-[**Flex box**](https://developer.mozilla.org/en-US/docs/Glossary/Flex)，也加”弹性盒子“，目的是更高效的创建布局、对齐方式、动态处理剩余空间等问题。
+[**Flex box**](https://developer.mozilla.org/en-US/docs/Glossary/Flex)，也叫”弹性盒子“，目的是更高效的创建布局、对齐方式、动态处理剩余空间等问题。
 
 在Flex box之前，float和position被广泛的使用在布局里面，但是处理以下三个问题时会非常棘手：
 
@@ -21,7 +21,9 @@ cover: article.jpg
 
 * 多列布局中所有子项高度相同，而不管子项实际内容
 
-对于以上问题，Flex box处理起来可谓是得心应手，而现在各浏览器对于flex box的支持也很好了，点击[Can I Use链接]查看是否支持，所以，使用flex box会帮助我们更快地解决问题，提升开发效率和可维护性。
+对于以上问题，Flex box处理起来可谓是得心应手，而现在各浏览器对于flex box的支持也很好了，点击[Can I Use链接](https://caniuse.com/#search=flex)查看是否支持，所以，使用flex box会帮助我们更快地解决问题，提升开发效率和可维护性。
+
+当然，flexbox并不是万能的，搭配position使用效果更佳！
 
 ## Basics and Terminology
 
@@ -145,6 +147,41 @@ cover: article.jpg
 那么问题来了： 缩小后的值是多少？计算方式是什么？
 
 [Stack Overflow链接](https://stackoverflow.com/questions/36550840/how-to-calculate-flex-shrink-when-flex-items-have-a-different-flex-basis)，能否看懂就看各位的造化了...
+
+我说几句自己的理解：缩小算法和缩小因子因子有关，也和所有的项的`flex-basis`的和与父容器`width`(或者`height`，取决于`flex-direction`)的差值大小有关，总之是一个比较复杂的计算方式，对于不能FQ的朋友们，我把原作者的解释代码放在下面👇，供大家参考学习。
+
+算法👇
+
+```javascript
+let sumScaledShrinkFactors = 0,
+    remainingFreeSpace = flexContainer.innerMainSize;
+for (let item of flexItems) {
+    remainingFreeSpace -= item.outerFlexBasis;
+    item.scaledShrinkFactor = item.innerFlexBasis * item.flexShrinkFactor;
+    sumScaledShrinkFactors += item.scaledShrinkFactor;
+}
+for (let item of flexItems) {
+    let ratio = item.scaledShrinkFactor / sumScaledShrinkFactors;
+    item.innerWidth = item.innerFlexBasis + ratio * remainingFreeSpace;
+}
+```
+
+公式👇
+
+```javascript
+flexBasis * (1 + shrinkFactor / sumScaledShrinkFactors * remainingFreeSpace)
+```
+
+例子👇
+
+```
+1*600px + 1*200px ─┐               width 
+                   │              ───────
+600px * (1 + 1 / 800px * -200px) = 450px 
+200px * (1 + 1 / 800px * -200px) = 150px 
+                            │     ───────
+600px - (600px + 200px) ────┘      600px 
+```
 
 * [**flex-basis**](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis): 项初始主轴大小(main size)
 
