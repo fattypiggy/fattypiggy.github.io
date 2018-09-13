@@ -19,4 +19,37 @@ tags: [CSS]
 * [W3Schools](https://www.w3schools.com/css/default.asp)，学习主要条目、规则、语法、用法、注意事项，需要翻墙。
 * [MDN](https://developer.mozilla.org/en-US/docs/Glossary/CSS)，主要是延展阅读。
 
-**CSS**(Cascading Style Sheets)，最新版为CSS3。近年来，随着移动互联网的蓬勃发展，CSS的内容也越来越多，标准的支持度也越来越高。
+**CSS**(Cascading Style Sheets)，最新版为CSS3。近年来，随着移动互联网的蓬勃发展，CSS的内容也越来越多，标准的支持度也越来越高。所以记录一点tips和高级部分供自己日后复习巩固。
+
+## Note
+
+* id和class命名不能以数字开头
+
+* 上下部分的margin会发生坍塌，上下元素之间的margin会取两者之间的最大值，左右元素不会发生坍塌
+
+* margin允许负值，padding不允许
+
+* `box-sizing`决定总宽度是border(`border-box`)还是content(`content-box`)
+
+* 推荐使用`em`和`rem`作为字体单位， 1rem = 16px，如果IE浏览器em单独使用有问题，可以配合百分比使用来达到兼容所有浏览器。
+
+```CSS
+body {
+    font-size: 100%
+}
+```
+
+* 当创建`<table>`时，配合`<thead>`和`<tbody>`比单纯的使用`<tr>`更好：1.语义；2.更容易CSS定制
+
+* `display`属性：1.所有元素都有默认值；2.可以修改使block元素“看起来像”inline元素，但是不会改变行为，例如
+
+```CSS
+span {
+    display: block;
+}
+```
+
+但是这个span依然不能包含其他block元素。
+
+* 隐藏元素有两种方式`display: none`和`visibility: hidden`：前者元素不会占据空间，后者会占据空间。
+
