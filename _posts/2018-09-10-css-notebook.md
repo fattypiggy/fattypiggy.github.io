@@ -84,3 +84,33 @@ div p {
 4. `>`：子选择器：和后代选择器唯一不同的是只会应用到直接子元素。
 
 * Pseudo-classes: 定义元素的特定状态
+
+* Pseudo-elements: 定义部分元素样式
+
+* 媒体查询：一般属性写在全局，当符合条件时应用特定属性，若同时符合多种情况，按照CSS先后顺序，后面覆盖前面。
+
+* CSS属性选择器
+
+```CSS
+[class|="value"] {
+    background: yellow;
+}
+```
+
+```CSS
+[class^="value"] {
+    background: yellow;
+}
+```
+
+`|=`是等号后面的`value`必须是一个单独的词，可以是`value`✅，或者是用连字符连接`value-example`✅，`valueable`则不可以❌
+
+`^=`是以`value`开头即可✅
+
+`&="value"`是以`value`结尾✅
+
+`*="value"`是包含`value`这段字符串即可✅
+
+`~="value"`是包含这个词，必须是单独的一个词，也不允许连字符✅
+
+* `transition`和`animation`：都能完成动画效果，但是`animation`可以完成更复杂的效果。
