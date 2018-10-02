@@ -21,7 +21,7 @@ tags: [CSS]
 
 **CSS**(Cascading Style Sheets)，最新版为CSS3。近年来，随着移动互联网的蓬勃发展，CSS的内容也越来越多，标准的支持度也越来越高。所以记录一点tips和高级部分供自己日后复习巩固。
 
-## Notes
+# Notes
 
 * id和class命名不能以数字开头
 
@@ -55,9 +55,9 @@ span {
 
 * position: 默认是`static`；`relative`是相对默认位置偏移，不脱离文档流；`fixed`是相对窗口位置，脱离文档流；`absolute`是相对于最近的设置过position属性(不包括默认`tatic`)的祖先元素进行偏移，如果没有设置过position的祖先，默认相对`body`;`sticky`会根据滚动位置从`relative`和`fixed`来回切换。
 
-* 居中问题：1.<div>可以`margin:auto`水平居中(<div>需要设置`width`)；2.text外面的容器设置`text-align:center`可以使文本水平居中；3.通过在容器设置`padding`达到垂直居中(子元素可以是block，也可以是inline)；4.容器设置`line-height`和`height`相等，子元素设置`line-height`和`vertical-align: middle`也可以垂直居中；5.利用`transform`同样可以达到垂直居中。
+* 居中问题：1.*div* 可以`margin:auto`水平居中( *div*需要设置`width`)；2.text外面的容器设置`text-align:center`可以使文本水平居中；3.通过在容器设置`padding`达到垂直居中(子元素可以是block，也可以是inline)；4.容器设置`line-height`和`height`相等，子元素设置`line-height`和`vertical-align: middle`也可以垂直居中；5.利用`transform`同样可以达到垂直居中。
 
-* css combinators: 
+* css combinators:
 
 1. `+`：相邻兄弟选择器
 
@@ -67,11 +67,11 @@ div + p {
 }
 ```
 
-应用到紧跟着<div>后面的<p>元素
+应用到紧跟着 *div*后面的*p*元素
 
-2. `~`：一般兄弟选择器，和相邻兄弟选择器唯一不同是不限于‘紧跟’。
+2.`~`：一般兄弟选择器，和相邻兄弟选择器唯一不同是不限于‘紧跟’。
 
-3. ` `(空格)：后代选择器
+3.` `(空格)：后代选择器
 
 ```CSS
 div p {
@@ -79,9 +79,9 @@ div p {
 }
 ```
 
-应用到所有<div>里包含的<p>元素，无论‘藏得多深’
+应用到所有 *div*里包含的 *p*元素，无论‘藏得多深’
 
-4. `>`：子选择器：和后代选择器唯一不同的是只会应用到直接子元素。
+4.`>`：子选择器：和后代选择器唯一不同的是只会应用到直接子元素。
 
 * Pseudo-classes: 定义元素的特定状态
 
