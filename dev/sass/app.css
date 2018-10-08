@@ -626,7 +626,8 @@ a {
   padding: 0 0 32px; }
   .markdown-body .highlight {
     margin: 0 0 16px;
-    overflow: scroll; }
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch; }
   .markdown-body img {
     transition: .3s; }
   .markdown-body ul li p, .markdown-body ol li p {
@@ -951,11 +952,13 @@ a {
   .home-banner h3, .tags-banner h3 {
     margin-top: 8px; }
   .home-banner .header-img, .tags-banner .header-img {
-    width: 695px; }
+    width: 695px;
+    height: 100%; }
   .home-content {
     margin-top: 0; }
   .article-list, .tags-content {
-    width: 100%; }
+    width: 100%;
+    margin-top: 16px; }
   .tags-content {
     margin-top: 0; }
   .tags-banner {

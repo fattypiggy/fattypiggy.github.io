@@ -8,6 +8,12 @@ A personal website.
 jekyll serve
 ```
 
+### optimization
+
+```bash
+gulp
+```
+
 ## install dependencies
 
 if some dependencies are missing, try
