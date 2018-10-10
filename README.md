@@ -22,4 +22,4 @@ if some dependencies are missing, try
 gem install <dependency>
 ```
 
-if you don't have write permissions for the /Library/Ruby/Gems/ directory, try add *sudo* before that
+if you don't have write permissions for the /Library/Ruby/Gems/ directory, try add `sudo` before that
