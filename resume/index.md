@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Resume
-# cover: resume.jpg
+cover: resume.jpg
 date: 2017-12-28
 ---
 
