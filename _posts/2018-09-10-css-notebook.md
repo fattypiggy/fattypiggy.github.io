@@ -114,3 +114,13 @@ div p {
 `~="value"`是包含这个词，必须是单独的一个词，也不允许连字符✅
 
 * `transition`和`animation`：都能完成动画效果，但是`animation`可以完成更复杂的效果。
+
+# More
+
+* 单行文本溢出显示省略号
+
+```CSS
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+```
