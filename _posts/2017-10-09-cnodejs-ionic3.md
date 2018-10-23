@@ -30,3 +30,5 @@ tags: [ionic3, Angular]
 ## Update
 
 * 回头去看看自己半年前写的代码，啧啧啧，哎，不说了，看来是我进步了...
+
+* 2018-10-23: It has been a long time since last commit, and Ionic has changed a lot. I created this repository to practise Angular and learn some CSS and mobile responsive skills, but for now, I think I should give it up. firstly, it's not a difficult task right? And I'm pretty busy now, so I have to made this decision. If you like this project and want to know how Angular and Ionic frame works and curious about how a cross platform hybrid app built, you can maintain it, PR welcome.

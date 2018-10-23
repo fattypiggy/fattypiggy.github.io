@@ -3,7 +3,6 @@ layout: post
 title: 万物伊始
 description: "我的第一篇博客"
 date: 2017-08-10
-# tags: [first post]
 cover: first-post.jpg
 ---
 
@@ -43,3 +42,7 @@ cover: first-post.jpg
 ## 出发
 
 接下来我会在此地驻扎，希望路过的朋友都能在此收获价值。
+
+## Update
+
+* 2018-06-27: Change into another [H2O theme](https://github.com/kaeyleo/jekyll-theme-H2O)
