@@ -24,14 +24,14 @@ GitHub: <https://github.com/fattypiggy>
 * 熟练掌握Angular, TypeScript
 * 熟练掌握JavaScript(ES5&6)
 * 熟练掌握HTML5
-* 熟练掌握ionic
 * 熟练常用CSS
 * 了解Node.js以及CORS, HTTP协议
+* 前Java Web开发, 熟悉Spring框架, RESTful风格接口
 
 ## 工作经验
 
 * Carl Zeiss - Software Developer  (02/2018-至今)  
-工作内容: 某教育类应用前端开发，嵌入iPad端LabScope，主要技术Angular, websocket, 完成实时消息同步等业务。
+工作内容: 1. Digital Classroom前端开发，嵌入iPad端LabScope，主要技术Angular, RxJS, websocket, 完成学生显微镜图像实时同步到老师端、分组交流、发送文件等业务。
 
 * PwC SDC - Associate Software Engineer  (07/2017-01/2018)  
 工作内容: 参与开发澳门某赌场的线上交易平台和后台维护系统，负责前端开发，使用到的技术有Angular，完成领导安排的任务以及部分前端优化，例如使用Angular的AOT和lazy loading特性提升性能，修复bugs和对部分代码进行重构。
@@ -46,7 +46,7 @@ GitHub: <https://github.com/fattypiggy>
 * 安卓射击类AR游戏  (03/2016-06/2016)
 * PwC SDC 内部OA系统  (09/2016-02/2017)
 * 澳门某赌场线上管理系统  (08/2017-01/2018)
-* cnodejs.org社区第三方APP  (09/2017-至今)
+* cnodejs.org社区第三方APP  (09/2017-02/2018) 目前已经停止维护
 
 ## 自我评价
 
