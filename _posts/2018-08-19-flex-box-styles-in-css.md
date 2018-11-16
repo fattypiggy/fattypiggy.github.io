@@ -219,6 +219,8 @@ flex项如果`flex-grow`、`flex-shrink`都设置了，无论`flex-wrap`是`wrap
 
 * [Bootstrap v4](https://getbootstrap.com/docs/4.1/utilities/flex/)，Bootstrap v4提供了快速使用flex的工具。
 
+* [Flexbox froggy - A game for learning CSS flexbox](https://flexboxfroggy.com/)
+
 ## Code Repository
 
 示例内容详见[GitHub Link](https://github.com/fattypiggy/flex-box-demo)。
