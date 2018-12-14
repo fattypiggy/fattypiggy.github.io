@@ -7,7 +7,7 @@ const urlsToCache = [
     '/page4/index.html',
     '/404.html',
     '/about/index.html',
-    'resume/index.html',
+    '/resume/index.html',
     '/tags.html',
     '/assets/css/app.min.css',
     '/assets/css/github-markdown.css',
