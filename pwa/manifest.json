@@ -1,6 +1,6 @@
 {
-  "short_name": "William's Blog",
   "name": "William's Blog",
+  "short_name": "William",
   "icons": [
     {
       "src":"./icon-512x512.png",
