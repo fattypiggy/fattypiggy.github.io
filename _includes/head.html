@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="author"  content="{{ site.author }}">
     <meta name="description" content="{{ site.description }}">
@@ -11,8 +11,16 @@
     <meta property="og:url" content="{{ page.url | prepend: site.url }}">
     <meta property="og:description" content="{{ site.description }}">
     <meta property="og:site_name" content="{{ site.title }}">
-    <!-- manifest.json -->
-    <link rel="manifest" href="/manifest.json">
+    <!-- PWA -->
+    <link rel="manifest" href="/pwa/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="William's Blog">
+    <meta name="apple-mobile-web-app-title" content="William's Blog">
+    <meta name="theme-color" content="#fff">
+    <meta name="msapplication-navbutton-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/">
     <!-- apple touch icons -->
     <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
