@@ -1,0 +1,16 @@
+language: node_js
+node_js: --lts
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH="$HOME/.yarn/bin:$PATH"
+before_script:
+  - git config user.name "William Jing"
+  - git config user.email "monkeykingisback@gmail.com"
+  - sed -i'' "s~https://github.com/fattypiggy/fattypiggy.github.io.git~https://${GITHUB_ACCESS_TOKEN}@github.com/fattypiggy/fattypiggy.github.io.git~" _config.yml
+script:
+  - hexo g
+after_success:
+  - hexo d
+branches:
+  only:
+    - gh-pages

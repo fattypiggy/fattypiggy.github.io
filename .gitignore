@@ -1,5 +1,7 @@
-_site
-Gemfile.lock
-.sass-cache
-.idea/
-node_modules
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
