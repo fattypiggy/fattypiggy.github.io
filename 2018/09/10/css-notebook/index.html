@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"williamjing.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="子曰：三人行，必有我师。">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS笔记">
+<meta property="og:url" content="https://williamjing.com/2018/09/10/css-notebook/index.html">
+<meta property="og:site_name" content="William&#39;s Blog">
+<meta property="og:description" content="子曰：三人行，必有我师。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-10-03T03:25:40.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS笔记">
+<meta name="twitter:description" content="子曰：三人行，必有我师。">
+
+<link rel="canonical" href="https://williamjing.com/2018/09/10/css-notebook/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>CSS笔记 | William's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104408878-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-104408878-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">William's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">22</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://williamjing.com/2018/09/10/css-notebook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="William Jing">
+      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="William's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSS笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-09-10 00:00:00" itemprop="dateCreated datePublished" datetime="2018-09-10T00:00:00+08:00">2018-09-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-03 11:25:40" itemprop="dateModified" datetime="2020-10-03T11:25:40+08:00">2020-10-03</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/09/10/css-notebook/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/10/css-notebook/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">子曰：三人行，必有我师。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>子曰：三人行，必有我师。</p>
+</blockquote>
+<p>又是一年教师节，祝福天下老师身体健康，桃李满天下。<br><a id="more"></a><br>虽说入行前端已经一年多，但是现在翻看自己“武器库”，发现前端三板斧样样都是半吊子，不能说不会，也不能说精通，总之就是基础知识欠佳。所以，我意识到这一点之后，决定近三期博文内容会专供基础知识，做到书读千遍，其义自见。</p>
+<p>本着英语+编程的原则，我主要选择英文原版进行学习，一是锻炼英语能力，二是本来编程类英语就不难，有时候甚至比看翻译后的文章还要清晰和准确，直接看英文版何乐而不为呢？更何况最近看Google Analytics访问本站的人竟然大多数来自非汉语国家😂😂，这种情况甚至激起了我用英文直接写的冲动，我会认真考虑以后如果有机会直接用英文写点干(fei)货(hua)。</p>
+<p>此篇文章主要参考：</p>
+<ul>
+<li><a href="https://www.w3schools.com/css/default.asp" target="_blank" rel="noopener">W3Schools</a>，学习主要条目、规则、语法、用法、注意事项，需要翻墙。</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS" target="_blank" rel="noopener">MDN</a>，主要是延展阅读。</li>
+</ul>
+<p><strong>CSS</strong>(Cascading Style Sheets)，最新版为CSS3。近年来，随着移动互联网的蓬勃发展，CSS的内容也越来越多，标准的支持度也越来越高。所以记录一点tips和高级部分供自己日后复习巩固。</p>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><ul>
+<li><p>id和class命名不能以数字开头</p>
+</li>
+<li><p>上下部分的margin会发生坍塌，上下元素之间的margin会取两者之间的最大值，左右元素不会发生坍塌</p>
+</li>
+<li><p>margin允许负值，padding不允许</p>
+</li>
+<li><p><code>box-sizing</code>决定总宽度是border(<code>border-box</code>)还是content(<code>content-box</code>)</p>
+</li>
+<li><p>推荐使用<code>em</code>和<code>rem</code>作为字体单位， 1rem = 16px，如果IE浏览器em单独使用有问题，可以配合百分比使用来达到兼容所有浏览器。</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">100%</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>当创建<code>&lt;table&gt;</code>时，配合<code>&lt;thead&gt;</code>和<code>&lt;tbody&gt;</code>比单纯的使用<code>&lt;tr&gt;</code>更好：1.语义；2.更容易CSS定制</p>
+</li>
+<li><p><code>display</code>属性：1.所有元素都有默认值；2.可以修改使block元素“看起来像”inline元素，但是不会改变行为，例如</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是这个span依然不能包含其他block元素。</p>
+<ul>
+<li><p>隐藏元素有两种方式<code>display: none</code>和<code>visibility: hidden</code>：前者元素不会占据空间，后者会占据空间。</p>
+</li>
+<li><p>position: 默认是<code>static</code>；<code>relative</code>是相对默认位置偏移，不脱离文档流；<code>fixed</code>是相对窗口位置，脱离文档流；<code>absolute</code>是相对于最近的设置过position属性(不包括默认<code>tatic</code>)的祖先元素进行偏移，如果没有设置过position的祖先，默认相对<code>body</code>;<code>sticky</code>会根据滚动位置从<code>relative</code>和<code>fixed</code>来回切换。</p>
+</li>
+<li><p>居中问题：1.<em>div</em> 可以<code>margin:auto</code>水平居中( <em>div</em>需要设置<code>width</code>)；2.text外面的容器设置<code>text-align:center</code>可以使文本水平居中；3.通过在容器设置<code>padding</code>达到垂直居中(子元素可以是block，也可以是inline)；4.容器设置<code>line-height</code>和<code>height</code>相等，子元素设置<code>line-height</code>和<code>vertical-align: middle</code>也可以垂直居中；5.利用<code>transform</code>同样可以达到垂直居中。</p>
+</li>
+<li><p>css combinators:</p>
+</li>
+</ul>
+<ol>
+<li><code>+</code>：相邻兄弟选择器</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> + <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>应用到紧跟着 <em>div</em>后面的<em>p</em>元素</p>
+<p>2.<code>~</code>：一般兄弟选择器，和相邻兄弟选择器唯一不同是不限于‘紧跟’。</p>
+<p>3.<code></code>(空格)：后代选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>应用到所有 <em>div</em>里包含的 <em>p</em>元素，无论‘藏得多深’</p>
+<p>4.<code>&gt;</code>：子选择器：和后代选择器唯一不同的是只会应用到直接子元素。</p>
+<ul>
+<li><p>Pseudo-classes: 定义元素的特定状态</p>
+</li>
+<li><p>Pseudo-elements: 定义部分元素样式</p>
+</li>
+<li><p>媒体查询：一般属性写在全局，当符合条件时应用特定属性，若同时符合多种情况，按照CSS先后顺序，后面覆盖前面。</p>
+</li>
+<li><p>CSS属性选择器</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[class|=<span class="string">"value"</span>]</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[class^=<span class="string">"value"</span>]</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>|=</code>是等号后面的<code>value</code>必须是一个单独的词，可以是<code>value</code>✅，或者是用连字符连接<code>value-example</code>✅，<code>valueable</code>则不可以❌</p>
+<p><code>^=</code>是以<code>value</code>开头即可✅</p>
+<p><code>&amp;=&quot;value&quot;</code>是以<code>value</code>结尾✅</p>
+<p><code>*=&quot;value&quot;</code>是包含<code>value</code>这段字符串即可✅</p>
+<p><code>~=&quot;value&quot;</code>是包含这个词，必须是单独的一个词，也不允许连字符✅</p>
+<ul>
+<li><code>transition</code>和<code>animation</code>：都能完成动画效果，但是<code>animation</code>可以完成更复杂的效果。</li>
+</ul>
+<h1 id="More"><a href="#More" class="headerlink" title="More"></a>More</h1><ul>
+<li>单行文本溢出显示省略号</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/08/19/flex-box-styles-in-css/" rel="prev" title="Flex box styles in CSS">
+      <i class="fa fa-chevron-left"></i> Flex box styles in CSS
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/10/02/feeling-of-future/" rel="next" title="今日有感">
+      今日有感 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#More"><span class="nav-number">2.</span> <span class="nav-text">More</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="William Jing"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">William Jing</p>
+  <div class="site-description" itemprop="description">路漫漫其修远兮，吾将上下而求索。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fattypiggy" title="GitHub → https://github.com/fattypiggy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:monkeykingisback@gmail.com" title="E-Mail → mailto:monkeykingisback@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="//hannahtian.com" title="//hannahtian.com">Hannah Tian</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="//isaacguan.github.io/" title="//isaacguan.github.io/">Isaac's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.ptbird.cn/" title="http://www.ptbird.cn/" rel="noopener" target="_blank">Postbird</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="//crisjk.site/" title="//crisjk.site/">Kuang Jun</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">William Jing</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://myblog-williamjing.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://williamjing.com/2018/09/10/css-notebook/";
+    this.page.identifier = "2018/09/10/css-notebook/";
+    this.page.title = "CSS笔记";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://myblog-williamjing.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

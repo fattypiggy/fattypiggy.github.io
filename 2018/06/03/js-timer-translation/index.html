@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"williamjing.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="翻译自jQuery之父John Resig老爷子的经典解读。">
+<meta name="keywords" content="翻译,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="译-JS定时器工作原理">
+<meta property="og:url" content="https://williamjing.com/2018/06/03/js-timer-translation/index.html">
+<meta property="og:site_name" content="William&#39;s Blog">
+<meta property="og:description" content="翻译自jQuery之父John Resig老爷子的经典解读。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://williamjing.com/images/js-timers.png">
+<meta property="og:updated_time" content="2020-10-03T03:25:40.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="译-JS定时器工作原理">
+<meta name="twitter:description" content="翻译自jQuery之父John Resig老爷子的经典解读。">
+<meta name="twitter:image" content="https://williamjing.com/images/js-timers.png">
+
+<link rel="canonical" href="https://williamjing.com/2018/06/03/js-timer-translation/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>译-JS定时器工作原理 | William's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104408878-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-104408878-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">William's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">22</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://williamjing.com/2018/06/03/js-timer-translation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="William Jing">
+      <meta itemprop="description" content="路漫漫其修远兮，吾将上下而求索。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="William's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          译-JS定时器工作原理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-06-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-03T00:00:00+08:00">2018-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-03 11:25:40" itemprop="dateModified" datetime="2020-10-03T11:25:40+08:00">2020-10-03</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/06/03/js-timer-translation/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/03/js-timer-translation/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">翻译自jQuery之父John Resig老爷子的经典解读。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本篇是John Resig的<a href="https://johnresig.com/blog/how-javascript-timers-work/" target="_blank" rel="noopener">JS定时器工作原理</a>的翻译版本，由于本人水平有限，仅供个人学习与参考，如有用词不准确，请以原文为准。<br><a id="more"></a></p>
+<h1 id="译文"><a href="#译文" class="headerlink" title="译文"></a>译文</h1><p>在基本层面上，理解JavaScript定时器的工作原理是非常重要的。由于单线程的缘故，所以他们表现的不是很直观。让我们从研究可以构建和操作定时器的三个函数开始。</p>
+<ul>
+<li>var id = setTimeout(fn, delay); - 初始化一个单独的定时器，它将在延迟结束后出发特定函数，函数将返回唯一ID，用它可以稍后取消这个定时器。</li>
+<li>var id = setInterval(fn, delay); - 和上面setTimeout类似，但是它是连续不断地调用函数(每次都是一段延迟之后)，直到它被取消。</li>
+<li>clearInterval(id); - 接收一个ID(从上诉两个函数之一返回的)，然后结束定时器。</li>
+</ul>
+<p>为了理解定时器内部工作原理，要引出一个重要概念：定时器的延迟是不保证的。由于浏览器中的所有JavaScript都在单个线程上执行，因此只有在执行过程中有开始时才会运行异步事件（例如鼠标单击和计时器）。如下图所示:</p>
+<p><img src="/images/js-timers.png" alt="js-timers"></p>
+<p>这个图中有很多信息要消化，但完全理解它会让您更好地了解异步JavaScript执行的工作方式。这个图片是一维的：垂直表示时间(毫秒)，蓝块表示JS执行块，。比如第一块执行将近18ms，鼠标点击块大约11ms，等等。</p>
+<p>因为JS在同一时刻只能执行一段代码(因为单线程机制)，这些蓝“块”都在阻塞其他异步事件。意思是：当其他异步事件发生时(比如鼠标点击，定时器出发，XMLHTTPRequest完成)，事件会进入到一个队列，以供之后执行(如何排队各个浏览器都不一致，所以认为是一种简化)。</p>
+<p>开始，在第一块JS代码里初始化两个定时器：一个10ms的setTimeout和一个10ms的setInterval。由于计时器开始的位置和时间，实际上在我们完成第一个代码块之前就会触发它。但是请注意，它不会立即执行（由于线程，它不能执行此操作）。 相反，延迟功能排队以便在下一个可用时刻执行。</p>
+<p>此外，在第一块代码里面，我们发现有一个鼠标点击事件触发。异步事件相关的JavaScript回调(我们不知道用户何时做这个动作，因此认为是异步)不能被立刻执行，像初始化好的定时器，排在队列中等待执行。</p>
+<p>在第一段JS代码执行结束后，浏览器立刻“问”一个问题：下一个执行的是谁？在这种情况下，点击处理程序和定时器处理程序都在等待，所以浏览器选择了一个(鼠标点击回调)，然后立刻执行。定时器将会等待下一个可用时间，等待执行。</p>
+<p>请注意，在鼠标点击处理程序执行的时候，间隔定时器第一次触发了。与计时器一样，它的处理程序也在排队等待以后执行。然而，注意间隔定时器又一次触发了(此时timer正在执行)，这次处理程序向下“顺延”了。如果一大块代码执行时，队列里有很多间隔执行器，那么每个间隔执行器将连续执行，没有间隔，直到完成(注：队列里间隔为空)。相反，浏览器只是简单地在等待直到没有更多的间隔处理程序排到队列中。</p>
+<p>事实上，我们可以看出，间隔定时器第三次触发的时候，他自己本身正在执行(注：第二次正在执行)。这告诉我们一个很重要的事实：间隔定时器并不关心正在执行的是什么，他们会盲目的排队，即使两次触发之间的delay比预定的小。</p>
+<p>最后，在第二次间隔回调函数执行结束后，我们可以看到JS引擎没有要执行的了。这也意味着浏览器在等待新的异步事件发生。当间隔定时器再次触发时，我们得到事件是50ms。这次，没有任何东西阻塞这次执行，所以立刻触发。</p>
+<p>我们用一个例子来更好地展示setTimeout和setInterval的不同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">/* Some long block of code... */</span></span><br><span class="line">  setTimeout(<span class="built_in">arguments</span>.callee, <span class="number">10</span>);</span><br><span class="line">&#125;, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">/* Some long block of code... */</span></span><br><span class="line">&#125;, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>乍一看，这连段代码似乎功能上是等同的，其实不然。尤其是，setTimeout的这段代码总会有至少10ms的延迟(相对于上一次回调执行，只可能更多，不可能少)<br>，而setInterval会尝试每10ms执行一个回调，不管上次执行。</p>
+<p>我们学了很多知识，最后总结一下：</p>
+<ul>
+<li>JavaScript引擎是单线程的，强制异步事件排队等待执行。</li>
+<li>setTimeout和setInterval在执行异步代码上，从本质上来说是不一样的。</li>
+<li>如果定时器(timer)被正在执行块阻塞，他讲被延迟到下一个可用时间段来执行(将会比预期间隔更长)。</li>
+<li>间隔(intervals)将会连续执行，如果执行时间超过delay。</li>
+</ul>
+<p>所有这些都是令人难以置信的重要知识。 了解JavaScript引擎的工作方式，特别是在发生大量异步事件的情况下，为构建高级应用程序代码打下了坚实的基础。</p>
+<p>完！！！</p>
+<h1 id="关于作者"><a href="#关于作者" class="headerlink" title="关于作者"></a>关于作者</h1><p><a href="https://johnresig.com" target="_blank" rel="noopener">John Resig</a>:</p>
+<ul>
+<li>JS语言专家</li>
+<li>Khan Academy前端架构师</li>
+<li>大名鼎鼎jQuery的作者</li>
+<li>畅销书《Secrets of the JavaScript Ninja》的作者。</li>
+</ul>
+<h1 id="翻译对照"><a href="#翻译对照" class="headerlink" title="翻译对照"></a>翻译对照</h1><ul>
+<li>interval: 间隔、间隔定时器</li>
+<li>timer: 定时器</li>
+<li>handler: 处理器</li>
+<li>fire: 触发</li>
+<li>queue up: 排队</li>
+</ul>
+<h1 id="个人心得"><a href="#个人心得" class="headerlink" title="个人心得"></a>个人心得</h1><p>花了两个小时来翻译大牛的这篇技术博文，不仅锻炼了英语，还学习很多关于JS的内部工作原理，一个字：值！这篇对于理解JavaScript事件轮询机制也有重要帮助。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/翻译/" rel="tag"># 翻译</a>
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/27/angular-foo/" rel="prev" title="Angular随笔">
+      <i class="fa fa-chevron-left"></i> Angular随笔
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/07/30/foo/" rel="next" title="月底杂谈">
+      月底杂谈 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#译文"><span class="nav-number">1.</span> <span class="nav-text">译文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于作者"><span class="nav-number">2.</span> <span class="nav-text">关于作者</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#翻译对照"><span class="nav-number">3.</span> <span class="nav-text">翻译对照</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人心得"><span class="nav-number">4.</span> <span class="nav-text">个人心得</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="William Jing"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">William Jing</p>
+  <div class="site-description" itemprop="description">路漫漫其修远兮，吾将上下而求索。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fattypiggy" title="GitHub → https://github.com/fattypiggy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:monkeykingisback@gmail.com" title="E-Mail → mailto:monkeykingisback@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="//hannahtian.com" title="//hannahtian.com">Hannah Tian</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="//isaacguan.github.io/" title="//isaacguan.github.io/">Isaac's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.ptbird.cn/" title="http://www.ptbird.cn/" rel="noopener" target="_blank">Postbird</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="//crisjk.site/" title="//crisjk.site/">Kuang Jun</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">William Jing</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://myblog-williamjing.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://williamjing.com/2018/06/03/js-timer-translation/";
+    this.page.identifier = "2018/06/03/js-timer-translation/";
+    this.page.title = "译-JS定时器工作原理";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://myblog-williamjing.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
