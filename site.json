@@ -18,11 +18,11 @@
     {
       "title": "FaceProbe: Recovering HDR Environment Map via Masked Diffusion and Physical Preference",
       "authors": [
-        { "name": "Peng Zhao" },
+        { "name": "Peng Zhao", "url": "https://openreview.net/profile?id=~Peng_Zhao24" },
         { "name": "William Jing" },
-        { "name": "Juyan Ba" },
-        { "name": "Kairui Feng" },
-        { "name": "Xuanhong Chen" }
+        { "name": "Juyan Ba", "url": "https://openreview.net/profile?id=~Juyan_Ba1" },
+        { "name": "Kairui Feng", "url": "https://openreview.net/profile?id=~Kairui_Feng1" },
+        { "name": "Xuanhong Chen", "url": "https://openreview.net/profile?id=~Xuanhong_Chen1" }
       ],
       "venue": "NeurIPS (Poster)",
       "year": 2026,
