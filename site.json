@@ -2,7 +2,7 @@
   "name": "William Jing",
   "url": "https://fattypiggy.github.io",
   "description": "William Jing's academic homepage.",
-  "affiliation": "University of North Texas",
+  "affiliation": "",
   "bio": [
     "I am a Ph.D. student in Information Science at the University of North Texas. My research focuses on diffusion-based image generation, portrait relighting, and illumination estimation. I am particularly interested in controllable image generation that preserves visual fidelity and scene content.",
     "I received my M.S. in Computer Science from Fudan University and my B.S. in Computer Science from Donghua University. Previously, I worked as an Applied Scientist Intern at Amazon and a Machine Learning Research Intern at OPPO Research Institute."
