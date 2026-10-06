@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fattypiggy.github.io/sitemap.xml

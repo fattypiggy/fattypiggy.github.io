@@ -1,0 +1,18 @@
+{
+  "name": "William Jing",
+  "url": "https://fattypiggy.github.io",
+  "description": "William Jing's academic homepage.",
+  "affiliation": "",
+  "bio": [],
+  "research": "",
+  "photo": "assets/images/profile.jpg",
+  "links": [
+    { "label": "Email", "url": "mailto:realwilliamjing@gmail.com" },
+    { "label": "Google Scholar", "url": "" },
+    { "label": "CV", "url": "" },
+    { "label": "OpenReview", "url": "https://openreview.net/profile?id=%7EWilliam_Jing1" },
+    { "label": "GitHub", "url": "https://github.com/fattypiggy" }
+  ],
+  "news": [],
+  "publications": []
+}

@@ -1,0 +1,42 @@
+{
+  "name": "William Jing",
+  "url": "https://fattypiggy.github.io",
+  "description": "William Jing's academic homepage and publications.",
+  "affiliation": "Your position and institution",
+  "bio": [
+    "Replace this paragraph with your introduction, current institution, and advisor.",
+    "Replace this paragraph with your research interests and current work."
+  ],
+  "research": "Replace this sentence with a short overview of your research.",
+  "photo": "assets/images/profile.jpg",
+  "links": [
+    { "label": "Email", "url": "mailto:your-email@example.com" },
+    { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=YOUR_ID" },
+    { "label": "CV", "url": "assets/pdf/cv.pdf" },
+    { "label": "OpenReview", "url": "https://openreview.net/profile?id=YOUR_ID" },
+    { "label": "GitHub", "url": "https://github.com/fattypiggy" }
+  ],
+  "news": [
+    { "date": "2026-10", "text": "Replace this sentence with a real update, or leave news as an empty array." }
+  ],
+  "publications": [
+    {
+      "title": "Your paper title",
+      "authors": [
+        { "name": "William Jing" },
+        { "name": "Your coauthor", "url": "https://example.com/" }
+      ],
+      "venue": "Your conference or journal",
+      "year": 2026,
+      "url": "https://example.com/paper",
+      "selected": false,
+      "summary": "Replace this sentence with a short explanation of the paper's result.",
+      "links": [
+        { "label": "Paper", "url": "https://example.com/paper.pdf" },
+        { "label": "Code", "url": "https://github.com/your-account/your-project" },
+        { "label": "Project", "url": "https://example.com/project" }
+      ],
+      "bibtex": "@article{your_key,\n  title={Your paper title},\n  author={Jing, William and Coauthor, Your},\n  year={2026}\n}"
+    }
+  ]
+}
