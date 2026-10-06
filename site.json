@@ -14,5 +14,25 @@
     { "label": "GitHub", "url": "https://github.com/fattypiggy" }
   ],
   "news": [],
-  "publications": []
+  "publications": [
+    {
+      "title": "FaceProbe: Recovering HDR Environment Map via Masked Diffusion and Physical Preference",
+      "authors": [
+        { "name": "Peng Zhao" },
+        { "name": "William Jing" },
+        { "name": "Juyan Ba" },
+        { "name": "Kairui Feng" },
+        { "name": "Xuanhong Chen" }
+      ],
+      "venue": "NeurIPS (Poster)",
+      "year": 2026,
+      "url": "https://neurips.cc/virtual/2026/loc/atlanta/poster/155525",
+      "summary": "Recovering 360-degree HDR environment maps from portraits using masked diffusion and physically grounded preference optimization for accurate image-based relighting.",
+      "links": [
+        { "label": "OpenReview", "url": "https://openreview.net/forum?id=4wUS85pd1H" },
+        { "label": "NeurIPS", "url": "https://neurips.cc/virtual/2026/loc/atlanta/poster/155525" }
+      ],
+      "bibtex": "@inproceedings{zhao2026faceprobe,\n  title={FaceProbe: Recovering HDR Environment Map via Masked Diffusion and Physical Preference},\n  author={Zhao, Peng and Jing, William and Ba, Juyan and Feng, Kairui and Chen, Xuanhong},\n  booktitle={Advances in Neural Information Processing Systems},\n  year={2026},\n  url={https://openreview.net/forum?id=4wUS85pd1H}\n}"
+    }
+  ]
 }
