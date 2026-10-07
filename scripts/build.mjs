@@ -28,6 +28,8 @@ await access(path.join(root, site.photo));
 // Refresh browser caches when the photo changes, while retaining its public file path.
 const photoVersion = createHash('sha256').update(await readFile(path.join(root, site.photo))).digest('hex').slice(0, 12);
 const photoSource = `${site.photo}?v=${photoVersion}`;
+const styleVersion = createHash('sha256').update(await readFile(path.join(root, 'assets/style.css'))).digest('hex').slice(0, 12);
+const styleSource = `assets/style.css?v=${styleVersion}`;
 
 const papers = [...site.publications].sort((a, b) => Number(b.year) - Number(a.year));
 const paperId = paper => `publication-${paper.year}-${createHash('sha256').update(paper.title).digest('hex').slice(0, 12)}`;
@@ -139,7 +141,7 @@ const html = `<!doctype html>
   <meta name="twitter:description" content="${escape(site.description)}">
   <meta name="twitter:image" content="${escape(photoUrl)}">
   <meta name="twitter:image:alt" content="${escape(site.name)}">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="${safeUrl(styleSource)}">
   <script type="application/ld+json">${schema}</script>
 </head>
 <body>
