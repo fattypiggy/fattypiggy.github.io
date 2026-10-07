@@ -122,4 +122,6 @@ GitHub Pages 使用 `master` 分支的根目录作为发布来源。以后修改
 3. 在 Sitemaps 中提交 `sitemap.xml`。
 4. 在 URL inspection 中检查主页并 Request indexing。
 
-身份验证和提交收录需要你自己的 Google 账号，此次代码优化不代表已经完成 Search Console 提交。Google 抓取和收录需要时间，也不保证排名。可在 LinkedIn、OpenReview、Google Scholar 等你自己的资料中添加主页链接，方便访问者和搜索引擎找到此站。参考 [Google 抓取说明](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)。
+此站已于 2026-10-06 通过 Google Search Console 的 HTML 标签所有权验证，并提交了 `sitemap.xml` 和主页索引请求。请保留 `seo.googleSiteVerification` 的值，以维持验证。Google 实时检查已确认站点地图允许抓取且抓取成功；实际处理与收录进度以 Search Console 为准。
+
+Google 抓取和收录需要时间，也不保证排名。可在 LinkedIn、OpenReview、Google Scholar 等你自己的资料中添加主页链接，方便访问者和搜索引擎找到此站。参考 [Google 抓取说明](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)。
