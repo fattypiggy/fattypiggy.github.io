@@ -86,9 +86,9 @@ summary { width: fit-content; cursor: pointer; color: var(--link); }
 pre { overflow: auto; max-width: 100%; padding: 14px; background: var(--highlight); font-size: 12px; line-height: 1.6; }
 footer { padding: 28px 0 36px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 12px; }
 footer a { color: var(--muted); }
-.visitor-map { margin: 28px auto 0; text-align: center; }
-.visitor-map-title { margin-bottom: 12px; font-size: 14px; }
-.visitor-map-widget { width: 320px; max-width: 100%; min-height: 157px; margin: 0 auto; }
+.visitor-map { margin: 20px auto 0; text-align: center; }
+.visitor-map-title { margin-bottom: 8px; font-size: 12px; }
+.visitor-map-widget { width: 220px; max-width: 100%; min-height: 140px; margin: 0 auto; }
 .visitor-map-widget img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
 .visitor-map p:last-child { margin: 10px 0 0; }
 

@@ -1,7 +1,11 @@
 {
   "name": "William Jing",
   "url": "https://fattypiggy.github.io",
-  "description": "William Jing's academic homepage.",
+  "description": "William Jing, Ph.D. student at the University of North Texas, researching diffusion models, portrait relighting, and illumination estimation.",
+  "seo": {
+    "title": "William Jing | Diffusion Models & Computer Vision",
+    "googleSiteVerification": ""
+  },
   "affiliation": "",
   "bio": [
     "I am a Ph.D. student in Information Science at the University of North Texas. My research focuses on diffusion-based image generation, portrait relighting, and illumination estimation. I am particularly interested in controllable image generation that preserves visual fidelity and scene content.",

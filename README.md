@@ -18,8 +18,11 @@
 | `news` | 可选动态；没有内容时用 `[]`，整个栏目隐藏 |
 | `publications` | 论文列表；一篇论文对应一个对象 |
 | `visitorMap` | 页脚的 MapMyVisitors 访客地图；`enabled: false` 可关闭，`widgetKey` 是嵌入代码中 `d` 的值，`siteId` 是统计页网址末尾的编号 |
+| `description` | 搜索和分享时的简介；简洁说明姓名、职位与研究方向 |
+| `seo.title` | 搜索结果和浏览器标签页的标题 |
+| `seo.googleSiteVerification` | Google Search Console 的 HTML 验证标签中 `content` 的值；留空不生成验证标签 |
 
-访客地图使用你注册账号后提供的 MapMyVisitors 嵌入代码，放在页面最下方的 `<body>` 内。点击 Visitor statistics 可打开此站的[统计页](https://mapmyvisitors.com/web/1c8pt)。地图自动适配容器宽度，桌面最大 320px。请保持 `widgetKey` 与 `siteId` 对应同一个账号下的同一个地图。
+访客地图使用你注册账号后提供的 MapMyVisitors 嵌入代码，放在页面最下方的 `<body>` 内。点击 Visitor statistics 可打开此站的[统计页](https://mapmyvisitors.com/web/1c8pt)。地图自动适配容器宽度，桌面最大 220px，脚本延后执行以便主体先显示。请保持 `widgetKey` 与 `siteId` 对应同一个账号下的同一个地图。
 
 统计从接入此服务后开始，自己的访问与测试访问也可能计入。加载时第三方服务会收到访客 IP、浏览器信息和网站来源；IP 地域并非精确位置，VPN、缓存和内容拦截等也会影响计数，不能把次数等同于独立人数。数据保存在 MapMyVisitors 的服务器，不在此 Git 仓库中；官方[保留政策](https://mapmyvisitors.com/b/policy)说明访客数据保留于账号有效期间，并非永久存档保证。未来更换域名时，请先在服务后台核对网站设置，保留原地图，避免重新生成地图而丢失统计连续性。
 
@@ -107,3 +110,16 @@ GitHub Pages 使用 `master` 分支的根目录作为发布来源。以后修改
 首次发布时，在 GitHub Settings → Pages 移除旧 Custom domain，确认从分支根目录发布，并把仓库 About 的网站地址改为 https://fattypiggy.github.io/。等待部署完成后检查主页和头像链接。
 
 模板为独立编写的 HTML/CSS，保留了对 [Jon Barron](https://jonbarron.info/) 布局的署名。
+
+## Google 搜索与 SEO
+
+构建脚本根据 `site.json` 生成标题、描述、规范网址、分享预览，以及 WebSite、ProfilePage、Person 和 ScholarlyArticle 结构化数据。论文信息直接来自页面上的论文列表，不需要重复填写。`robots.txt` 允许抓取；`sitemap.xml` 包含主页和头像地址。正文与论文在原始 HTML 中，无需执行地图脚本即可读取。页脚使用 `data-nosnippet`，避免访问次数与模板署名出现在 Google 搜索摘要中。
+
+上线后可以在 [Google Search Console](https://search.google.com/search-console) 添加 URL-prefix 属性 `https://fattypiggy.github.io/`。GitHub Pages 的 `github.io` 域名由 GitHub 管理，使用 HTML 标签验证即可，无需修改域名 DNS：
+
+1. 选择 HTML tag 验证，复制标签中 `content` 的值，填入 `seo.googleSiteVerification`。
+2. 构建、提交并推送，等待 Pages 发布后，再回到 Search Console 点击 Verify。
+3. 在 Sitemaps 中提交 `sitemap.xml`。
+4. 在 URL inspection 中检查主页并 Request indexing。
+
+身份验证和提交收录需要你自己的 Google 账号，此次代码优化不代表已经完成 Search Console 提交。Google 抓取和收录需要时间，也不保证排名。可在 LinkedIn、OpenReview、Google Scholar 等你自己的资料中添加主页链接，方便访问者和搜索引擎找到此站。参考 [Google 抓取说明](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)。

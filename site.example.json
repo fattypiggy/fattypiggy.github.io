@@ -2,6 +2,10 @@
   "name": "William Jing",
   "url": "https://fattypiggy.github.io",
   "description": "William Jing's academic homepage and publications.",
+  "seo": {
+    "title": "William Jing | Academic Homepage",
+    "googleSiteVerification": ""
+  },
   "affiliation": "Your position and institution",
   "bio": [
     "Replace this paragraph with your introduction, current institution, and advisor.",
