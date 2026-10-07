@@ -17,9 +17,13 @@
 | `links` | Email、Google Scholar、CV、OpenReview 等链接 |
 | `news` | 可选动态；没有内容时用 `[]`，整个栏目隐藏 |
 | `publications` | 论文列表；一篇论文对应一个对象 |
-| `visitorMap` | 页脚的 SmallCounter 访客地图；`enabled: false` 可关闭，`siteId` 是此站独立的计数器编号 |
+| `visitorMap` | 页脚的 MapMyVisitors 访客地图；`enabled: false` 可关闭，`widgetKey` 是嵌入代码中 `d` 的值，`siteId` 是统计页网址末尾的编号 |
 
-访客地图按 IP 的大致地域统计，从接入后开始累积，自己的访问与测试访问也会计入。地图展示最近 100 位访客，点击 Recent visitor statistics 可查看国家、地区、城市统计。地图图片由第三方 SmallCounter 提供，加载时该服务会收到访客 IP、浏览器信息和网站来源；IP 地域并非精确位置。以后换域名时可以保留同一个计数器编号。服务详情见 [SmallCounter](https://smallcounter.com/map/)。
+访客地图使用你注册账号后提供的 MapMyVisitors 嵌入代码，放在页面最下方的 `<body>` 内。点击 Visitor statistics 可打开此站的[统计页](https://mapmyvisitors.com/web/1c8pt)。地图自动适配容器宽度，桌面最大 320px。请保持 `widgetKey` 与 `siteId` 对应同一个账号下的同一个地图。
+
+统计从接入此服务后开始，自己的访问与测试访问也可能计入。加载时第三方服务会收到访客 IP、浏览器信息和网站来源；IP 地域并非精确位置，VPN、缓存和内容拦截等也会影响计数，不能把次数等同于独立人数。数据保存在 MapMyVisitors 的服务器，不在此 Git 仓库中；官方[保留政策](https://mapmyvisitors.com/b/policy)说明访客数据保留于账号有效期间，并非永久存档保证。未来更换域名时，请先在服务后台核对网站设置，保留原地图，避免重新生成地图而丢失统计连续性。
+
+原 SmallCounter 已停止在网页中加载；之前的统计仍可通过[旧统计页](https://smallcounter.com/vmap/1791331579/)查看，不会自动合并到新服务。
 
 `url` 和 `photo` 已设置好。联系方式的 `url` 目前为空，填上后链接才显示。Email 使用 `mailto:你的邮箱`。CV 可以放到 `assets/pdf/cv.pdf`，再填写这个路径；文件夹可自行创建。
 

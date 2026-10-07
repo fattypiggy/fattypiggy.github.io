@@ -88,7 +88,7 @@ footer { padding: 28px 0 36px; border-top: 1px solid var(--rule); color: var(--m
 footer a { color: var(--muted); }
 .visitor-map { margin: 28px auto 0; text-align: center; }
 .visitor-map-title { margin-bottom: 12px; font-size: 14px; }
-.visitor-map-widget { min-height: 90px; }
+.visitor-map-widget { width: 320px; max-width: 100%; min-height: 157px; margin: 0 auto; }
 .visitor-map-widget img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
 .visitor-map p:last-child { margin: 10px 0 0; }
 

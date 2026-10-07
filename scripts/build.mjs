@@ -64,16 +64,21 @@ const schema = JSON.stringify({
 
 let visitorMapHtml = '';
 if (site.visitorMap?.enabled) {
-  const siteId = site.visitorMap.siteId;
-  if (!Number.isSafeInteger(siteId) || siteId <= 0) throw new Error('visitorMap.siteId must be a positive integer.');
+  const { widgetKey, siteId } = site.visitorMap;
+  if (typeof widgetKey !== 'string' || !/^[A-Za-z0-9_-]{20,100}$/.test(widgetKey)) {
+    throw new Error('visitorMap.widgetKey must be the key from your MapMyVisitors embed code.');
+  }
+  if (typeof siteId !== 'string' || !/^[a-z0-9]+$/.test(siteId)) {
+    throw new Error('visitorMap.siteId must be the ID from your MapMyVisitors statistics URL.');
+  }
+  const statisticsUrl = `https://mapmyvisitors.com/web/${siteId}`;
   visitorMapHtml = `<div class="visitor-map" aria-label="Visitor map">
         <p class="visitor-map-title">Visitors</p>
         <div class="visitor-map-widget">
-          <a href="https://smallcounter.com/vmap/${siteId}/" aria-label="View visitor map statistics">
-            <img src="https://smallcounter.com/map/view.php?type=180&amp;id=${siteId}" width="180" height="90" alt="World map showing recent visitor locations" referrerpolicy="strict-origin">
-          </a>
+          <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=${widgetKey}&amp;cl=ffffff&amp;w=a"></script>
+          <noscript><p>Enable JavaScript to view the visitor map.</p></noscript>
         </div>
-        <p><a href="https://smallcounter.com/vmap/${siteId}/">Recent visitor statistics</a> · <a href="https://smallcounter.com/map/">SmallCounter</a></p>
+        <p><a href="${statisticsUrl}">Visitor statistics</a> · <a href="https://mapmyvisitors.com/">MapMyVisitors</a></p>
       </div>`;
 }
 
