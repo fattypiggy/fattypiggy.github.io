@@ -62,6 +62,21 @@ const schema = JSON.stringify({
   sameAs: profileLinks.filter(item => /^https?:\/\//.test(item.url)).map(item => item.url)
 }).replace(/</g, '\\u003c');
 
+let visitorMapHtml = '';
+if (site.visitorMap?.enabled) {
+  const siteId = site.visitorMap.siteId;
+  if (!Number.isSafeInteger(siteId) || siteId <= 0) throw new Error('visitorMap.siteId must be a positive integer.');
+  visitorMapHtml = `<div class="visitor-map" aria-label="Visitor map">
+        <p class="visitor-map-title">Visitors</p>
+        <div class="visitor-map-widget">
+          <a href="https://smallcounter.com/vmap/${siteId}/" aria-label="View visitor map statistics">
+            <img src="https://smallcounter.com/map/view.php?type=180&amp;id=${siteId}" width="180" height="90" alt="World map showing recent visitor locations" referrerpolicy="strict-origin">
+          </a>
+        </div>
+        <p><a href="https://smallcounter.com/vmap/${siteId}/">Recent visitor statistics</a> · <a href="https://smallcounter.com/map/">SmallCounter</a></p>
+      </div>`;
+}
+
 const html = `<!doctype html>
 <!-- Generated from site.json by scripts/build.mjs. Edit site.json, then run node scripts/build.mjs. -->
 <html lang="en">
@@ -107,7 +122,9 @@ const html = `<!doctype html>
         ${papers.length ? paperHtml : '<p class="empty">Publications will be added here.</p>'}
       </section>
     </main>
-    <footer>${escape(site.name)}. Layout inspired by <a href="https://jonbarron.info/">Jon Barron</a>.</footer>
+    <footer>${escape(site.name)}. Layout inspired by <a href="https://jonbarron.info/">Jon Barron</a>.
+      ${visitorMapHtml}
+    </footer>
   </div>
 </body>
 </html>

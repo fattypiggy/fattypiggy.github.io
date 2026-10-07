@@ -17,6 +17,9 @@
 | `links` | Email、Google Scholar、CV、OpenReview 等链接 |
 | `news` | 可选动态；没有内容时用 `[]`，整个栏目隐藏 |
 | `publications` | 论文列表；一篇论文对应一个对象 |
+| `visitorMap` | 页脚的 SmallCounter 访客地图；`enabled: false` 可关闭，`siteId` 是此站独立的计数器编号 |
+
+访客地图按 IP 的大致地域统计，从接入后开始累积，自己的访问与测试访问也会计入。地图展示最近 100 位访客，点击 Recent visitor statistics 可查看国家、地区、城市统计。地图图片由第三方 SmallCounter 提供，加载时该服务会收到访客 IP、浏览器信息和网站来源；IP 地域并非精确位置。以后换域名时可以保留同一个计数器编号。服务详情见 [SmallCounter](https://smallcounter.com/map/)。
 
 `url` 和 `photo` 已设置好。联系方式的 `url` 目前为空，填上后链接才显示。Email 使用 `mailto:你的邮箱`。CV 可以放到 `assets/pdf/cv.pdf`，再填写这个路径；文件夹可自行创建。
 

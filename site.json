@@ -9,6 +9,7 @@
   ],
   "research": "",
   "photo": "assets/images/profile.jpg",
+  "visitorMap": { "enabled": true, "siteId": 1791331579 },
   "links": [
     { "label": "Email", "url": "mailto:realwilliamjing@gmail.com" },
     { "label": "Google Scholar", "url": "" },
